@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8cce52a2-1d74-4fcb-9938-82cb97c5c590"
+      }
+    },
+    "owner": "nicolettastr"
   }
 }
