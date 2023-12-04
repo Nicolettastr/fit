@@ -5,6 +5,29 @@ import { Image, SafeAreaView, StyleSheet, View, TextInput } from "react-native"
 import { theme } from "../theme/index"
 
 const HomeScreen = () => {
+
+
+  const apiKey = '0459915eec487c3db8d815324e29b59bc581c8d6'
+const apiUrl = "https://wger.de/api/v2/userprofile/"
+
+fetch(apiUrl, {
+  method: 'GET',
+  headers: {
+    Authorization: `Token ${apiKey}`,
+    'Content-Type': 'application/json'
+  }
+})
+  .then(response => response.json())
+  .then(data => {
+    // Manejar los datos recibidos de la API
+    console.log(data)
+  })
+  .catch(error => {
+    // Manejar errores
+    console.error('Error fetching data:', error)
+  })
+
+
   return (
     <View style={styles.HomeContainer}>
       <StatusBar style="light" />
@@ -16,9 +39,7 @@ const HomeScreen = () => {
       <SafeAreaView style={styles.searchBarWrapper}>
         <View style={styles.searchBarContainer}>
           <View
-            style={StyleSheet.compose(styles.searchBar, {
-              backgroundColor: theme.bgWhite(0.2)
-            })}
+            style={[styles.searchBar, { backgroundColor: theme.bgWhite(0.2) }]}
           >
             <TextInput
               placeholder="Search city"
