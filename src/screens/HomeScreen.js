@@ -8,7 +8,7 @@ const HomeScreen = () => {
 
 
   const apiKey = '0459915eec487c3db8d815324e29b59bc581c8d6'
-const apiUrl = "https://wger.de/api/v2/userprofile/"
+const apiUrl = "https://wger.de/api/v2/exercise/"
 
 fetch(apiUrl, {
   method: 'GET',
